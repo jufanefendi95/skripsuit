@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Admin Home</h1>
+    <br>
+    <a href="{{ url_for('tampil') }}">
+      TAMPIL DATA USER
+    </a>
+
+    <br>
+    <a href="{{ url_for('register') }}">
+      TAMBAH DATA USER
+    </a>
+
+    &nbsp;&nbsp;
+     <br>
+
+    <a href="{{ url_for('pelanggan') }}">
+      TAMBAH DATA PELANGGAN
+    </a>
+
+    &nbsp;&nbsp;
+
+
+     <br>
+    <a href="{{ url_for('tampil_pelanggan') }}">
+      TAMPIL DATA PELANGGAN
+    </a>
+
+     <br>
+
+ <a href="{{ url_for('logout') }}">
+      LOGOUT
+    </a>
+
+  </body>
+</html>
