@@ -1,0 +1,28 @@
+<html>
+<head>
+   <title>Tampilan data pelangan </title>
+</head>
+<body>
+   <h2>Tampilan data pelanggan </h2>   
+   <table border="1">
+		<tr>
+         <th width=60> Nama Pelanggan </th>
+         <th width=200> Alamat </th>
+         <th width=170> Daya </th>
+         <th width=80> Ubah</th>
+         <th width=80> Hapus</th>
+      </tr>
+      {% for pelanggan in container %}
+         <tr>
+            <td>{{ pelanggan.nama }}</td>
+            <td>{{ pelanggan.alamat }}</td>
+            <td>{{ pelanggan.daya }}</td>
+            <td><a href="http://localhost:5000/ubah/{{pelanggan.id}}">Ubah</a></td>
+            <td><a href="http://localhost:5000/hapus/{{pelanggan.id}}">Hapus</a></td>
+         </tr>
+      {% endfor %}
+   </table>
+   <p><a href="{{ url_for('pelanggan') }}">Tambah Data</a></p>
+
+</body>
+</html>

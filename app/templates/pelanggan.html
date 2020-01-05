@@ -1,0 +1,39 @@
+<html>
+<head>
+   <title>Pelanggan</title>
+</head>
+<body>
+   <h2> Pelanggan </h2>
+   
+   {% macro showerror(field) -%}
+      {% if errors %}
+         {% for t in errors %}
+            {% if field in t[0] %}
+               <span style="color:red;font-size:12px">
+                 {{ t[1][0] }}
+               </span>
+            {% endif %}
+         {% endfor %}
+      {% endif %}
+   {%- endmacro %}
+   
+   <form method="post">
+
+      {# baris di bawah ini wajib disertakan #}
+      {# agar form.validate() dapat bernilai True #}
+		{{ form.csrf_token }}	
+      
+      {{ form.nama.label }}<br/>
+      {{ form.nama() }}<br/>
+
+      {{ form.alamat.label }}<br />
+      {{ form.alamat() }} {{ showerror('alamat') }}<br />
+
+      {{ form.daya.label }}<br />
+      {{ form.daya() }} {{ showerror('daya') }}<br />
+
+      <p>{{ form.submit() }}</p>
+   </form>
+   
+</body>
+</html>

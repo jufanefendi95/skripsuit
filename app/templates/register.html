@@ -1,0 +1,49 @@
+<html>
+<head>
+   <title>Register user</title>
+</head>
+<body>
+   <h2>Register User</h2>
+   
+   {% macro showerror(field) -%}
+      {% if errors %}
+         {% for t in errors %}
+            {% if field in t[0] %}
+               <span style="color:red;font-size:12px">
+                 {{ t[1][0] }}
+               </span>
+            {% endif %}
+         {% endfor %}
+      {% endif %}
+   {%- endmacro %}
+   
+   <form method="post">
+
+      {# baris di bawah ini wajib disertakan #}
+      {# agar form.validate() dapat bernilai True #}
+		{{ form.csrf_token }}	
+      
+      {{ form.level_id.label }}<br/>
+      {{ form.level_id() }}
+
+      {{ form.username.label }}<br />
+      {{ form.username() }} {{ showerror('username') }}<br />
+
+      {{ form.email.label }}<br />
+      {{ form.email() }} {{ showerror('email') }}<br />
+
+      {{ form.password.label }}<br />
+      {{ form.password() }} {{ showerror('password') }}<br />
+
+      {{ form.no_telp.label }}<br />
+      {{ form.no_telp() }} {{ showerror('no_telp') }}<br />
+
+
+      {{ form.alamat.label }}<br />
+      {{ form.alamat() }} {{ showerror('alamat') }}<br />
+
+      <p>{{ form.submit() }}</p>
+   </form>
+   
+</body>
+</html>

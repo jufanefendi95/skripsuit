@@ -1,0 +1,37 @@
+<html>
+<head>
+   <title>Demo Flask-SQLAlchemy dan SQLite</title>
+</head>
+<body>
+   <h2>Ubah Data</h2>
+   
+   <form action="http://localhost:5000/ubah/{{user.id}}" method="post">
+      ID:<br />
+      <input type="text" name="id" size="15" 
+      value="{{user.id}}" maxlength="4" readonly /><br />
+      Judul buku:<br />
+      
+      Judul buku:<br />
+      <input type="text" name="penulis" size="30" 
+      value="{{user.username}}" maxlength="25" /><br />
+      
+            Judul buku:<br />
+      <input type="text" name="penulis" size="30" 
+      value="{{user.password}}" maxlength="25" /><br />
+
+                  Judul buku:<br />
+      <input type="text" name="penulis" size="30" 
+      value="{{user.no_telp}}" maxlength="25" /><br />
+                  Judul buku:<br />
+      <input type="text" name="penulis" size="30" 
+      value="{{user.alamat}}" maxlength="25" /><br />
+
+                        Judul buku:<br />
+      <input type="text" name="penulis" size="30" 
+      value="{{user.email}}" maxlength="25" /><br />
+
+      <p><input type="submit" value="Simpan"></p>
+   </form>
+
+</body>
+</html>
